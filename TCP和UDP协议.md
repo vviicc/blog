@@ -75,6 +75,8 @@
 3.	UDP是面向报文的。UDP没有拥塞控制，很适合多媒体通信的要求。
 4.	UDP支持一对一、一对多、多对一和多对多的交互通信。
 5.	UDP的首部开销小，只有 8个字节。
+    
+
 ======
 #####参考文章
 1.	[http://blog.chinaunix.net/uid-26275986-id-4109209.html](http://blog.chinaunix.net/uid-26275986-id-4109679.html)
