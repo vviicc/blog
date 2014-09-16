@@ -68,6 +68,14 @@
 		* 执行拥塞避免算法（高起点，线性增长）；
 		
 ======
+###UDP协议
+#####UDP协议特点
+1.	UDP是无连接的，即发送数据之前不需要建立连接。
+2.	UDP 使用尽最大努力交付，即不保证可靠交付，同时也不使用拥塞控制。
+3.	UDP是面向报文的。UDP没有拥塞控制，很适合多媒体通信的要求。
+4.	UDP支持一对一、一对多、多对一和多对多的交互通信。
+5.	UDP的首部开销小，只有 8个字节。
+======
 #####参考文章
 1.	[http://blog.chinaunix.net/uid-26275986-id-4109209.html](http://blog.chinaunix.net/uid-26275986-id-4109679.html)
 2.	[http://blog.chinaunix.net/uid-26275986-id-4109679.html](http://blog.chinaunix.net/uid-26275986-id-4109679.html)
