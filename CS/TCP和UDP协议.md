@@ -87,7 +87,7 @@
 ![UDP报文](http://my.csdn.net/uploads/201204/10/1334069453_5734.png  "UDP报文")   
 
 ======
-###[PS]IP首部  
+###PS:IP首部  
 ![IP首部](http://img.my.csdn.net/uploads/201209/09/1347160568_3999.jpg)
 
 ======
