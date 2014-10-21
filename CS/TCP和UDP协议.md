@@ -87,6 +87,10 @@
 ![UDP报文](http://my.csdn.net/uploads/201204/10/1334069453_5734.png  "UDP报文")   
 
 ======
+###[PS]IP首部  
+![IP首部](http://img.my.csdn.net/uploads/201209/09/1347160568_3999.jpg)
+
+======
 #####参考文章
 1.	[http://blog.chinaunix.net/uid-26275986-id-4109209.html](http://blog.chinaunix.net/uid-26275986-id-4109679.html)
 2.	[http://blog.chinaunix.net/uid-26275986-id-4109679.html](http://blog.chinaunix.net/uid-26275986-id-4109679.html)
