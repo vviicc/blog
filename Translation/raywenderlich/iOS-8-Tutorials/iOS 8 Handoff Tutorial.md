@@ -37,9 +37,9 @@ Handoff是基于用户活动的概念，用户活动是独立的集合单元。
 2.  更新user activity,一旦`NSUserActivity`实例成为当前时，操作系统会周期性地在最前面的view controller 调用`updateUserActivityState(activity:)`方法给你一个机会更新user activity,比如：
 
     override func updateUserActivityState(activity:NSUserActivity){
-      let activityListItem = // ... get updated list of items
-      activity.addUserInfoEntriesFromDictionary(["shopsnap.item.key":activityListItems])
-      super.updateUserActivityState(activity)
+    let activityListItem = // ... get updated list of items
+    activity.addUserInfoEntriesFromDictionary(["shopsnap.item.key":activityListItems])
+    super.updateUserActivityState(activity)
     }
     
 你不用设置`userInfo`到一个新的字典或者直接更新它，而是直接调用`addUserInfoEntriesFromDictionary`方法
