@@ -24,12 +24,12 @@ Handoff主要取决于以下东西：
 Handoff是基于用户活动的概念，用户活动是独立的集合单元。  
 `NSUserActivity`类表示一个用户活动的实例，它在某种程度上概括了可以和其他设备相关的程序的状态。  
 有三种方法可以和`NSUserActivity`对象交互：  
-1.  创建user activity,源app创建一个`NSUserActivity`并调用`becomeCurrent()`方法开始广播进程，比如：
-    let activity = NSUserActivity(activityType: "com.razeware.shopsnap.view")
-    activiey.title = "Viewing"
-    activity.userInfo = ["shopsnap.item.key":["Apple","Orange","Banana"]]
-    self.userActivity = activity
-    self.userActivity?.becomeCurrent()
+1.  创建user activity,源app创建一个`NSUserActivity`并调用`becomeCurrent()`方法开始广播进程，比如：  
+    let activity = NSUserActivity(activityType: "com.razeware.shopsnap.view")  
+    activiey.title = "Viewing"  
+    activity.userInfo = ["shopsnap.item.key":["Apple","Orange","Banana"]]  
+    self.userActivity = activity  
+    self.userActivity?.becomeCurrent()  
 
 你可以使用`NSUserActivity`的`userInfo`来传递自然数据类型给接收设备。自然数据类型包括`NSArray,NSData,NSDate,NSDcitionary,NSNull,NSNumber,NSSet,NSString,NSUUID,NSURL`
 
