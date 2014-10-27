@@ -24,7 +24,7 @@ Handoff主要取决于以下东西：
 Handoff是基于用户活动的概念，用户活动是独立的集合单元。  
 `NSUserActivity`类表示一个用户活动的实例，它在某种程度上概括了可以和其他设备相关的程序的状态。  
 有三种方法可以和`NSUserActivity`对象交互：  
-1.  创建user activity,源app创建一个`NSUserActivity`并调用`becomeCurrent()`方法开始广播进程，比如：
+*  创建user activity,源app创建一个`NSUserActivity`并调用`becomeCurrent()`方法开始广播进程，比如：
 
     let activity = NSUserActivity(activityType: "com.razeware.shopsnap.view")  
     activiey.title = "Viewing"  
@@ -34,7 +34,7 @@ Handoff是基于用户活动的概念，用户活动是独立的集合单元。
 
 你可以使用`NSUserActivity`的`userInfo`来传递自然数据类型给接收设备。自然数据类型包括`NSArray,NSData,NSDate,NSDcitionary,NSNull,NSNumber,NSSet,NSString,NSUUID,NSURL` 
 
-2.  更新user activity,一旦`NSUserActivity`实例成为当前时，操作系统会周期性地在最前面的view controller 调用`updateUserActivityState(activity:)`方法给你一个机会更新user activity,比如：
+*  更新user activity,一旦`NSUserActivity`实例成为当前时，操作系统会周期性地在最前面的view controller 调用`updateUserActivityState(activity:)`方法给你一个机会更新user activity,比如：
 
     override func updateUserActivityState(activity:NSUserActivity){
     let activityListItem = // ... get updated list of items
@@ -44,7 +44,7 @@ Handoff是基于用户活动的概念，用户活动是独立的集合单元。
     
 你不用设置`userInfo`到一个新的字典或者直接更新它，而是直接调用`addUserInfoEntriesFromDictionary`方法  
 
-3.  接收user activity,当你接收的app伴随user activity的handoff启动后，app 代理调用`application(:willContinueUserActivityWithType)`方法，注意这个方法并不传输`NSUserActivity`实例，因为它需要一段时间直到handoff下载并传递`NSUserActivity`数据到你的app。接下来，一旦user activity下载完之后下面的代理回调会调用  
+*  接收user activity,当你接收的app伴随user activity的handoff启动后，app 代理调用`application(:willContinueUserActivityWithType)`方法，注意这个方法并不传输`NSUserActivity`实例，因为它需要一段时间直到handoff下载并传递`NSUserActivity`数据到你的app。接下来，一旦user activity下载完之后下面的代理回调会调用  
 
         func application(application:UIApplication!,continueUserActivity userActivity:NSUserActivity!,restorationHandler:(([AnyObject]! -> Void)!) -> Bool){  
           // Do some checks to make sure you can proceed  
