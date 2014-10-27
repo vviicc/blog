@@ -12,5 +12,24 @@ handoff不仅仅是在iOS设备与osx设备之间转移，还可以在iOS设备�
 
 ###设备兼容性：iOS  
 检查iOS设备是否兼容handoff，到`Setting`并选择`General`，如果你能看到`Handoff & Suggested Apps`，
-说明你的设备兼容handofff，
+说明你的设备兼容handofff。  
+Handoff主要取决于以下东西：  
+1.  一个iclound账户，如果你想使用handoff你必须在每个设备都使用同一个iclound账户；
+2.  蓝牙 LE 4.0，handoff通过蓝牙LE信号广播活动，因此发送者和接收者都必须这次蓝牙LE 4.0
+3.  iclound匹配，设备都应该已经通过iclound匹配，当你在兼容handoff设备上登录iclound帐号时，每个设备都和其他兼容handoff设备匹配。
+
+此时，确保你有两个兼容handoff的设备运行在iOS8或以上使用同一个iclound账户。
+
+###用户活动（User Activities）  
+Handoff是基于用户活动的概念，用户活动是独立的集合单元。  
+`NSUserActivity`类表示一个用户活动的实例，它在某种程度上概括了可以和其他设备相关的程序的状态。  
+有三种方法可以和`NSUserActivity`对象交互：  
+1.  创建user activity,源app创建一个`NSUserActivity`并调用`becomeCurrent()`方法开始广播进程，比如：
+    let activity = NSUserActivity(activityType: "com.razeware.shopsnap.view")
+    activiey.title = "Viewing"
+    activity.userInfo = ["shopsnap.item.key":["Apple","Orange","Banana"]]
+    self.userActivity = activity
+    self.userActivity?.becomeCurrent()
+
+你可以使用`NSUserActivity`的`userInfo`来传递自然数据类型给接收设备。自然数据类型包括`NSArray,NSData,NSDate,NSDcitionary,NSNull,NSNumber,NSSet,NSString,NSUUID,NSURL`
 
