@@ -44,7 +44,7 @@ Handoff是基于用户活动的概念，用户活动是独立的集合单元。
     
 你不用设置`userInfo`到一个新的字典或者直接更新它，而是直接调用`addUserInfoEntriesFromDictionary`方法
 
-3.  接收user activity,当你接收的app伴随user activity的handoff启动后，app 代理调用`application(:willContinueUserActivityWithType)`方法，注意这个方法并不传输`NSUserActivity`实例，因为它需要一段时间直到handoff下载并传递`NSUserActivity`数据到你的app。接下来，一旦user activity下载完之后下面的代理回调会调用
+3.  接收user activity,当你接收的app伴随user activity的handoff启动后，app 代理调用`application(:willContinueUserActivityWithType)`方法，注意这个方法并不传输`NSUserActivity`实例，因为它需要一段时间直到handoff下载并传递`NSUserActivity`数据到你的app。接下来，一旦user activity下载完之后下面的代理回调会调用  
 
     func application(application:UIApplication!,continueUserActivity userActivity:NSUserActivity!,restorationHandler:(([AnyObject]! -> Void)!) -> Bool){  
       // Do some checks to make sure you can proceed  
